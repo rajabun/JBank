@@ -8,9 +8,9 @@
 public class Customer
 {
     // instance variables - replace the example below with your own
-    //private Account accounts = newAccount();
+    private Account accounts = new Account();
     private String cityAddress;
-    private int custID;
+    private int custId;
     private String dateOfBirth;
     private String email;
     private String firstName;
@@ -30,66 +30,87 @@ public class Customer
 
     public Customer(String fname, String lname, String dob)
     {
+        firstName = fname;
+        lastName = lname;
+        dateOfBirth = dob;
     }
     
     public Customer(String firstName, String lastName, String dateOfBirth, int custID)
     {
+        firstName = firstName;
+        lastName = lastName;
+        dateOfBirth = dateOfBirth;
     }
     
     private String getAddress()
     {
-        return null;
+        return streetAddress + cityAddress + zipOrPostalCode;
     }
     
-    private Account getAccount()
+    public Account getAccount()
     {
-        return null;
+        return new Account();
     }
     
     private int getCustomerId()
     {
-        return 0;
+        return custId;
     }
     
-    private String getEmail()
+    //private String getEmail()
+    public String getEmail()
     {
-        return null;
+        return email;
     }
     
-    private String getCustomerName()
+    public String getName()
     {
-        return null;
+        return lastName + "," + firstName;
     }
     
     public int getNumOfAccounts()
     {
-        return 0;
+        return numberOfCurrentAccounts;
     }
     
     private String getPhoneNumber()
     {
-        return null;
+        return phoneNumber;
     }
     
     private void setAddress(String street, String city, String code)
     {
-        
+        this.streetAddress = street;
+        this.cityAddress = city;
+        this.zipOrPostalCode = code;
+    }
+   
+    public void setAccount (Account akun1)
+    {
+        this.accounts = akun1;
     }
     
     private void setEmail(String emailAddress)
+    //public void setEmail(String emailAddress)
     {
-        
+        this.email = emailAddress;
     }
     
-    private void setCustomerName(String lname, String fname)
+    public void setName(String lname, String fname)
     {
-        
+        this.firstName = fname;
+        this.lastName = lname;
     }
     
     private void setPhoneNumber(String phoneNum)
     {
-        
+        this.phoneNumber = phoneNum;
     }
+    
+    //public String toString()
+    //{
+    //    return 
+    //}
     
     /**
      * An example of a method - replace this comment with your own
